@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Sortify</Name>
+  <Repository>steven-harris/sortify:latest</Repository>
+  <Registry>https://hub.docker.com/r/steven-harris/sortify</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Steven-harris/sortify/issues</Support>
+  <Project>https://github.com/Steven-harris/sortify</Project>
+  <Overview>Sortify is an intelligent media file organizer with a modern drag-and-drop web interface. It automatically organizes your photos and media files by date with smart date extraction from filenames and EXIF data, creating a structured folder hierarchy (YYYY/Month).</Overview>
+  <Category>MediaApp:Photos MediaServer:Photos Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Steven-harris/sortify/main/unraid-template.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Steven-harris/sortify/main/frontend/public/pwa-192x192.png</Icon>
+  <ExtraParams>--user 1001:1001</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText>Buy me a coffee</DonateText>
+  <DonateLink>https://www.buymeacoffee.com/githelm</DonateLink>
+  <Requires/>
+  <Config Name="WebUI Port" Target="8080" Default="8080" Mode="tcp" Description="Web interface port for Sortify" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="Media Storage" Target="/media" Default="/mnt/user/media/photos" Mode="rw" Description="Path where organized media files will be stored. Sortify will create YYYY/Month folder structure here." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/photos</Config>
+  <Config Name="Temp Directory" Target="/tmp" Default="/mnt/user/appdata/sortify/temp" Mode="rw" Description="Temporary directory for file uploads and processing" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/sortify/temp</Config>
+  <Config Name="Media Path" Target="MEDIA_PATH" Default="/media" Mode="" Description="Internal container path for media storage (leave as default)" Type="Variable" Display="advanced" Required="true" Mask="false">/media</Config>
+  <Config Name="Temp Path" Target="TEMP_PATH" Default="/tmp" Mode="" Description="Internal container path for temporary files (leave as default)" Type="Variable" Display="advanced" Required="true" Mask="false">/tmp</Config>
+  <Config Name="Log Level" Target="LOG_LEVEL" Default="info" Mode="" Description="Logging level (debug, info, warn, error)" Type="Variable" Display="advanced" Required="false" Mask="false">info</Config>
+  <Config Name="CORS Origins" Target="CORS_ORIGINS" Default="*" Mode="" Description="Allowed CORS origins (comma-separated). Use * for all origins or specify your domain" Type="Variable" Display="advanced" Required="false" Mask="false">*</Config>
+  <Config Name="Port" Target="PORT" Default="8080" Mode="" Description="Internal container port (leave as default)" Type="Variable" Display="advanced" Required="true" Mask="false">8080</Config>
+  <Config Name="PUID" Target="PUID" Default="1001" Mode="" Description="User ID for file permissions (should match your media files owner)" Type="Variable" Display="advanced" Required="false" Mask="false">1001</Config>
+  <Config Name="PGID" Target="PGID" Default="1001" Mode="" Description="Group ID for file permissions (should match your media files group)" Type="Variable" Display="advanced" Required="false" Mask="false">1001</Config>
+</Container>
