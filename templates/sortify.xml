@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>Sortify</Name>
-  <Repository>steven-harris/sortify:latest</Repository>
+  <Repository>steharris/sortify:latest</Repository>
   <Registry>https://hub.docker.com/r/steven-harris/sortify</Registry>
   <Network>bridge</Network>
   <MyIP/>
